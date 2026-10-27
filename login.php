@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Invalid request. Please refresh and try again.';
     } elseif ($username === 'admin' && hash_equals('password@123', $password)) {
         session_regenerate_id(true);
-        $_SESSION['demo_logged_in'] = true;
+       $_SESSION['logged_in'] = true;
         $_SESSION['demo_username'] = 'admin';
         header('Location: dashboard.php');
         exit;
